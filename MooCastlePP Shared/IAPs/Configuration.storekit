@@ -1,0 +1,138 @@
+{
+  "identifier" : "B4E21A3D",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1213361B",
+      "localizations" : [
+        {
+          "description" : "x1 Time",
+          "displayName" : "x1 Time",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.time1",
+      "referenceName" : "time1",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "632F9BAC",
+      "localizations" : [
+        {
+          "description" : "x3 Time",
+          "displayName" : "x3 Time",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.time3",
+      "referenceName" : "time3",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "A1752BFB",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "3 days Subscription",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.subscription1",
+      "referenceName" : "3 days Subscription",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "04A4B30A",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "1 Month Subscription",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.subscription2",
+      "referenceName" : "1 Month Subscription",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "CDDD6D18",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "1 Month Subscription 2",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.subscription3",
+      "referenceName" : "1 Month Subscription 2",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "31A80997",
+      "localizations" : [
+        {
+          "description" : "x5 Time",
+          "displayName" : "x5 Time",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.time5",
+      "referenceName" : "time5",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "8E64FDEA",
+      "localizations" : [
+        {
+          "description" : "x12 Time",
+          "displayName" : "x12 Time",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.time10",
+      "referenceName" : "time10",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "C3C0C2C5",
+      "localizations" : [
+        {
+          "description" : "x25 Time",
+          "displayName" : "x25 Time",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.MooCastlePP.time20",
+      "referenceName" : "time20",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}
