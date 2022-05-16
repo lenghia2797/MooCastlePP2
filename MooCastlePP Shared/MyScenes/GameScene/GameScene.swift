@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+
 class Ball: Sprite {
     override init() {
         super.init()
@@ -58,8 +59,8 @@ class GameScene : Scene, SKPhysicsContactDelegate {
     let levelLbl = Label(text: "Level: 1", fontSize: 35, fontName: GameConfig.fontText, color: GameConfig.textColor, position: CGPoint.withPercent(50, y: 92), zPosition: 7)
     enum physicDefine:UInt32 {
         case player = 1
-        case cake = 2
-        case wolf = 4
+        case coin = 2
+        case flame = 4
         case lake = 8
         case home = 16
         
@@ -77,7 +78,7 @@ class GameScene : Scene, SKPhysicsContactDelegate {
     var nCake = 0
     var player: Ball = Ball(img: "ball_1.png", size: CGSize.zero, position: CGPoint.zero, zPosition: 3)
     
-    var cakes = [Sprite()]
+    var coins = [Sprite()]
     var homes = [Sprite()]
     
     var startTouchPos: CGPoint = CGPoint.zero
@@ -160,16 +161,16 @@ class GameScene : Scene, SKPhysicsContactDelegate {
         if !gameEnd {
             
             switch contactMark {
-            case physicDefine.player.rawValue | physicDefine.cake.rawValue:
-                for cake in cakes {
+            case physicDefine.player.rawValue | physicDefine.coin.rawValue:
+                for cake in coins {
                     if cake == secondBody.node {
                         updateScore(value: 1, position: cake.position )
                         cake.physicsBody = nil
                         cake.removeFromParent()
                     }
                 }
-            case physicDefine.wolf.rawValue | physicDefine.cake.rawValue:
-                for cake in cakes {
+            case physicDefine.flame.rawValue | physicDefine.coin.rawValue:
+                for cake in coins {
                     if cake == firstBody.node {
                         cake.physicsBody = nil
                         cake.removeFromParent()
@@ -192,7 +193,7 @@ class GameScene : Scene, SKPhysicsContactDelegate {
                     }
                 ]))
                 Sounds.sharedInstance().playSound(soundName: "Sounds/splashing")
-            case physicDefine.wolf.rawValue | physicDefine.player.rawValue:
+            case physicDefine.flame.rawValue | physicDefine.player.rawValue:
                 self.run(SKAction.sequence([
                     SKAction.wait(forDuration: 0.1),
                     SKAction.run {
@@ -200,7 +201,7 @@ class GameScene : Scene, SKPhysicsContactDelegate {
                     }
                 ]))
                 gameOver()
-            case physicDefine.wolf.rawValue | physicDefine.lake.rawValue:
+            case physicDefine.flame.rawValue | physicDefine.lake.rawValue:
                 for i in 0...nRow-1 {
                     for j in 0...nCol-1 {
                         if firstBody.node == tileArr[i][j].wolf {
@@ -216,7 +217,7 @@ class GameScene : Scene, SKPhysicsContactDelegate {
                     }
                 }
                 Sounds.sharedInstance().playSound(soundName: "Sounds/splashing")
-            case physicDefine.wolf.rawValue | physicDefine.home.rawValue:
+            case physicDefine.flame.rawValue | physicDefine.home.rawValue:
                 gameOver()
             case physicDefine.player.rawValue | physicDefine.home.rawValue:
                 if score>=targetScore {

@@ -146,7 +146,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E13A1B75279D4E2E003B5938 /* MR */ = {
+		E13A1B75279D4E2E003B5938 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E151DE2227887543002F83CC /* Extentions.swift */,
@@ -158,7 +158,7 @@
 				E151DDFC278874F5002F83CC /* Actions.sks */,
 				E151DDFD278874F5002F83CC /* GameScene.sks */,
 			);
-			path = MR;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E13A1B77279D4E72003B5938 /* IAPs */ = {
@@ -185,13 +185,13 @@
 			isa = PBXGroup;
 			children = (
 				E13A1B77279D4E72003B5938 /* IAPs */,
-				E13A1B75279D4E2E003B5938 /* MR */,
+				E13A1B75279D4E2E003B5938 /* Extensions */,
 				E151DE732788754E002F83CC /* Data */,
 				E151DE722788754E002F83CC /* Images */,
 				E151DE742788754E002F83CC /* Sounds */,
-				E151DE4527887543002F83CC /* CauH */,
-				E151DE2D27887543002F83CC /* DoiTuong */,
-				E151DE3C27887543002F83CC /* GiaoDien */,
+				E151DE4527887543002F83CC /* Configs */,
+				E151DE2D27887543002F83CC /* Objects */,
+				E151DE3C27887543002F83CC /* UIs */,
 				E151DE3127887543002F83CC /* MyScenes */,
 				E151DE2327887543002F83CC /* SKS */,
 				E151DE4327887543002F83CC /* Risque-Regular.ttf */,
@@ -237,7 +237,7 @@
 			path = SKS;
 			sourceTree = "<group>";
 		};
-		E151DE2D27887543002F83CC /* DoiTuong */ = {
+		E151DE2D27887543002F83CC /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				E151DE2E27887543002F83CC /* EnemyObject.swift */,
@@ -246,7 +246,7 @@
 				E16A917A279C617C00E73F21 /* MoretimeBtn.swift */,
 				E13A1B6E279D0787003B5938 /* ProductObj.swift */,
 			);
-			path = DoiTuong;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		E151DE3127887543002F83CC /* MyScenes */ = {
@@ -274,7 +274,7 @@
 			path = GameScene;
 			sourceTree = "<group>";
 		};
-		E151DE3C27887543002F83CC /* GiaoDien */ = {
+		E151DE3C27887543002F83CC /* UIs */ = {
 			isa = PBXGroup;
 			children = (
 				E151DE3D27887543002F83CC /* Scene.swift */,
@@ -284,10 +284,10 @@
 				E151DE4127887543002F83CC /* ToggleButton.swift */,
 				E151DE4227887543002F83CC /* Button.swift */,
 			);
-			path = GiaoDien;
+			path = UIs;
 			sourceTree = "<group>";
 		};
-		E151DE4527887543002F83CC /* CauH */ = {
+		E151DE4527887543002F83CC /* Configs */ = {
 			isa = PBXGroup;
 			children = (
 				E151DE4627887543002F83CC /* GameConfig.swift */,
@@ -295,7 +295,7 @@
 				E151DE4827887543002F83CC /* AdMobConfig.swift */,
 				E151DE4927887543002F83CC /* GameCenterConfig.swift */,
 			);
-			path = CauH;
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

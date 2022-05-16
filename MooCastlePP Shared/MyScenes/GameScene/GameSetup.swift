@@ -25,7 +25,7 @@ extension GameScene {
         
         addSquare()
         addPlayer()
-        addCake()
+        addCoin()
         addHome()
         addLake()
         timeMovePerTile = 0.15
@@ -64,8 +64,8 @@ extension GameScene {
                     player.physicsBody?.categoryBitMask = physicDefine.player.rawValue
                     player.physicsBody?.isDynamic = true
                     player.physicsBody?.affectedByGravity = false
-                    player.physicsBody?.contactTestBitMask = physicDefine.cake.rawValue | physicDefine.wolf.rawValue | physicDefine.lake.rawValue | physicDefine.home.rawValue
-                    player.physicsBody?.collisionBitMask = physicDefine.cake.rawValue | physicDefine.lake.rawValue
+                    player.physicsBody?.contactTestBitMask = physicDefine.coin.rawValue | physicDefine.flame.rawValue | physicDefine.lake.rawValue | physicDefine.home.rawValue
+                    player.physicsBody?.collisionBitMask = physicDefine.coin.rawValue | physicDefine.lake.rawValue
                     return
                 }
             }
@@ -83,8 +83,8 @@ extension GameScene {
                     home.physicsBody?.categoryBitMask = physicDefine.home.rawValue
                     home.physicsBody?.isDynamic = false
                     home.physicsBody?.affectedByGravity = false
-                    home.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
-                    home.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
+                    home.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
+                    home.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
                     
                     homes.append(home)
                     
@@ -93,7 +93,7 @@ extension GameScene {
         }
     }
     
-    func addCake() {
+    func addCoin() {
         for i in 0...nRow-1 {
             for j in 0...nCol-1 {
                 if tileArr[i][j].name == objectType.coin.rawValue {
@@ -108,13 +108,13 @@ extension GameScene {
                     
                     addChild(cake)
                     cake.physicsBody = SKPhysicsBody(rectangleOf: cake.size)
-                    cake.physicsBody?.categoryBitMask = physicDefine.cake.rawValue
+                    cake.physicsBody?.categoryBitMask = physicDefine.coin.rawValue
                     cake.physicsBody?.isDynamic = true
                     cake.physicsBody?.affectedByGravity = false
-                    cake.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
-                    cake.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
+                    cake.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
+                    cake.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
                     
-                    cakes.append(cake)
+                    coins.append(cake)
                     targetScore += 1
                     scoreLbl.text = "Score : \(score) / \(targetScore)"
                 }
@@ -144,8 +144,8 @@ extension GameScene {
                     lake.physicsBody?.categoryBitMask = physicDefine.lake.rawValue
                     lake.physicsBody?.isDynamic = false
                     lake.physicsBody?.affectedByGravity = false
-                    lake.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
-                    lake.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.wolf.rawValue
+                    lake.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
+                    lake.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.flame.rawValue
                     
                 }
             }
@@ -175,11 +175,11 @@ extension GameScene {
                     tileArr[i][j].canMove = true
                     tileArr[i][j].haveWolf = true
                     tileArr[i][j].wolf.physicsBody = SKPhysicsBody(rectangleOf: tileArr[i][j].wolf.size)
-                    tileArr[i][j].wolf.physicsBody?.categoryBitMask = physicDefine.wolf.rawValue
+                    tileArr[i][j].wolf.physicsBody?.categoryBitMask = physicDefine.flame.rawValue
                     tileArr[i][j].wolf.physicsBody?.isDynamic = true
                     tileArr[i][j].wolf.physicsBody?.affectedByGravity = false
-                    tileArr[i][j].wolf.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.cake.rawValue | physicDefine.lake.rawValue
-                    tileArr[i][j].wolf.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.cake.rawValue | physicDefine.lake.rawValue
+                    tileArr[i][j].wolf.physicsBody?.contactTestBitMask = physicDefine.player.rawValue | physicDefine.coin.rawValue | physicDefine.lake.rawValue
+                    tileArr[i][j].wolf.physicsBody?.collisionBitMask = physicDefine.player.rawValue | physicDefine.coin.rawValue | physicDefine.lake.rawValue
                     
                 } else if tileArr[i][j].name == objectType.wall.rawValue {
                     let tree = Sprite(imageNamed: "_ice_\(Int.random(in: skin ... skin+1)).png", size: CGSize(width: dBall*0.8, height: dBall*0.8), position: tileArr[i][j].position, zPosition: 2.5)
